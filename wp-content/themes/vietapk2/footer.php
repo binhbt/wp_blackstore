@@ -5,13 +5,13 @@
 <div class="pagewidth">
 <ul class="mm_footer">
 <li>
-<div> PhanHung.Info © 2016</div>
-<div> Liên hệ: <strong>info.phanhung@gmail.com</strong>
+<div> Android Black Store © 2016</div>
+<div> Liên hệ: <strong>android.blackstore@gmail.com</strong>
 </div>
 </li>
 <li>
 <div style="text-align: right;">
-bgbbbb
+.
 </div>
 </li>
 </ul>
@@ -32,18 +32,14 @@ Liên kết:
 </div>
 </div>
 </div>
-<div id='fb-root'></div>
-<script>
-//<![CDATA[
-(function(d, s, id) {
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.3";
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1672114346386231";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-//]]>
-</script>
+}(document, 'script', 'facebook-jssdk'));</script>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -5,13 +5,13 @@
 
 <div class="social">
 
-<iframe src="https://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fandroidblackstore&amp;width&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=1444164382485740" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:258px;" allowTransparency="true"></iframe>
+<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fandroidblackstore&amp;width&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=1672114346386231" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:258px;" allowTransparency="true"></iframe>
 
 </div>
 
 		<div class="PopularPosts">
 		<div class="nav" style="margin-top: 10px;">
-			<i class="fa fa-bar-chart"></i> <h2>Xem nhieu</h2>
+			<i class="fa fa-bar-chart"></i> <h2>Tải nhiều</h2>
 		</div>
 			<div class="widget-content">
 				<ul>
@@ -27,7 +27,7 @@
 					<div class="item-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
 					</div>
 
-<div class="game-title" style="margin-top: 5px;">  Hỗ trợ: 
+<div class="game-title" style="margin-top: 5px;">  Hỗ trợ
 									<span class="item">
 																		<?php if(get_post_meta($post->ID, 'z_hotroandroid', true)): ?>
 <i class="fa fa-android" style="color:#86c620"></i>

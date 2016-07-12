@@ -20,7 +20,7 @@
 
 							<div class="game-title">
 												<span class="item">
-																								Hỗ trợ: <?php if(get_post_meta($post->ID, 'z_hotroandroid', true)): ?>
+																								Hỗ trợ:<?php if(get_post_meta($post->ID, 'z_hotroandroid', true)): ?>
 <i class="fa fa-android" style="color:#86c620"></i>
 <?php endif; ?>
 <?php if(get_post_meta($post->ID, 'z_hotroios', true)): ?>
@@ -48,7 +48,7 @@
 
 <!--<div class="NavBar">
 <?php dimox_breadcrumbs(); ?></div>-->
-<!-- Tiêu đề -->
+<!-- TiÃªu Ä‘á»� -->
 <?php setPostViews(get_the_ID()); ?>
     <?php if (have_posts()) { ?>
         <?php the_post(); ?>
@@ -87,7 +87,7 @@
 <div class="widget">
 	<div class="nav"><i class="fa fa-comments-o"></i> Gửi bình luận</div>
 				<div class="list1">
-<div class="fb-comments" data-href="<?php the_permalink();?>" data-width="100%" data-numposts="20" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="<?php the_permalink();?>" data-width="100%" data-numposts="20" data-colorscheme="light" data-order-by="reverse_time"></div>
 				</div>
 </div>
 </div></div>

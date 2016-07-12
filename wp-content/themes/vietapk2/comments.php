@@ -18,23 +18,23 @@ $oddcomment = 'alt';
 <?php if ('open' == $post->comment_status) : ?>
     <div id="respond">
         <div id="cancel-comment-reply">
-            <small><?php cancel_comment_reply_link('Trả lời'); ?></small>
+            <small><?php cancel_comment_reply_link('Tráº£ lá»�i'); ?></small>
         </div>
         <?php if (get_option('comment_registration') && !$user_ID) : ?>
-            <p>Bạn phải <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">đăng nhập</a> để viết bình luận.</p>
+            <p>Báº¡n pháº£i <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">Ä‘Äƒng nháº­p</a> Ä‘á»ƒ viáº¿t bÃ¬nh luáº­n.</p>
         <?php else : ?>
             <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
                 <?php if ($user_ID) : ?>
-                    <p><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>, <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Đăng xuất">Đăng xuất!</a></p>
+                    <p><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>, <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Ä�Äƒng xuáº¥t">Ä�Äƒng xuáº¥t!</a></p>
                 <?php else : ?>
                     <div id="cmm">
-                    <input type="text" name="author" id="author" placeholder="Tên bạn" value="<?php echo $comment_author; ?>" size="22" tabindex="1"  <?php if ($req) echo 'required'; ?> class="form">
+                    <input type="text" name="author" id="author" placeholder="TÃªn báº¡n" value="<?php echo $comment_author; ?>" size="22" tabindex="1"  <?php if ($req) echo 'required'; ?> class="form">
 <br>
                     <input type="text" name="email" id="email" placeholder="Email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo 'required'; ?> class="form"><br>
                     </div>
                     <?php endif; ?>
                 <textarea name="comment" id="comment" placeholder="Nội dung bình luận" cols="22" rows="4" tabindex="4" class="form"></textarea>
-                <p><input name="submit" type="submit" id="submit" tabindex="5" class="button" value="Gửi"/></p>
+                <p><input name="submit" type="submit" id="submit" tabindex="5" class="button" value="Gá»­i"/></p>
                 <?php comment_id_fields(); ?>
         <?php do_action('comment_form', $post->ID); ?>
             </form>
@@ -48,6 +48,6 @@ $oddcomment = 'alt';
         <!-- If comments are open, but there are no comments. -->
     <?php else : // comments are closed  ?>
         <!-- If comments are closed. -->
-        <p class="nocomments">Bình luận đã ​​đóng.</p></div>
+        <p class="nocomments">BÃ¬nh luáº­n Ä‘Ã£ â€‹â€‹Ä‘Ã³ng.</p></div>
     <?php endif; ?>
 <?php endif; ?></div>

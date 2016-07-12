@@ -12,7 +12,7 @@
     	));
     }
 
-//Phân trang
+//PhÃ¢n trang
 function hals_page() {
     $currentPage = null;
     $totalPage = null;
@@ -84,7 +84,7 @@ global $post;
 <img width="70" height="70" src="<?php echo my_image_display(); ?>" class="thumb wp-post-image" alt="<?php the_title();?>" title="<?php the_title();?>" /></a></div>
 <div class="tenbaiviet"><h2><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></h2></div>
 <div class="game-title" style="margin-top: 5px;"><span class="item">
-	Hỗ trợ: <?php if(get_post_meta($post->ID, 'z_hotroandroid', true)): ?>
+	Hỗ trợ <?php if(get_post_meta($post->ID, 'z_hotroandroid', true)): ?>
 <i class="fa fa-android" style="color:#86c620"></i>
 <?php endif; ?>
 <?php if(get_post_meta($post->ID, 'z_hotroios', true)): ?>
@@ -112,7 +112,7 @@ global $post;
 	</div>
     </div>  
 <?php }
-//Get ảnh thumb
+//Get áº£nh thumb
 function my_image_display($size = 'full') {	
 	if (has_post_thumbnail()) {
 	$image_id = get_post_thumbnail_id();
@@ -161,9 +161,9 @@ include_once('includes/metabox.php');
 /********TimeAgo****/
 function timeago( $type = 'post' ) {
 $d = 'comment' == $type ? 'get_comment_time' : 'get_post_time';
-return human_time_diff($d('U'), current_time('timestamp')) . " " . __(' trước.');
+return human_time_diff($d('U'), current_time('timestamp')) . " " . __(' trÆ°á»›c.');
 }
-/**************** Ảnh Tiêu Biểu - Feature Images ****************/
+/**************** áº¢nh TiÃªu Biá»ƒu - Feature Images ****************/
 function get_first_image() {
 		global $post, $posts;
 		$first_img = '';
@@ -253,7 +253,7 @@ $output .= ($page === intval($i))
 }
 return $output;
 }
-/***************** Chia Category Trang Chủ *****************/
+/***************** Chia Category Trang Chá»§ *****************/
 function chia_category($cat) { ?>
 <div class="thead">
 		<h1><?php echo get_cat_name( $cat ); ?></h1>
@@ -265,7 +265,7 @@ function chia_category($cat) { ?>
 			</h2>
 			<?php endwhile; ?>
 			<?php else : ?>
-				<p>Chưa có bài viết.</p>
+				<p>ChÆ°a cÃ³ bÃ i viáº¿t.</p>
 			<?php endif; ?>
 			<?php wp_reset_query(); ?>
 			
@@ -274,9 +274,9 @@ function chia_category($cat) { ?>
 function dimox_breadcrumbs() {
  
   $delimiter = '»';
-  $home = 'Home'; // chữ thay thế cho phần 'Home' link
-  $before = ''; // thẻ html đằng trước mỗi link
- $after = ''; // thẻ đằng sau mỗi link
+  $home = 'Home'; // chá»¯ thay tháº¿ cho pháº§n 'Home' link
+  $before = ''; // tháº» html Ä‘áº±ng trÆ°á»›c má»—i link
+ $after = ''; // tháº» Ä‘áº±ng sau má»—i link
  
   if ( !is_home() && !is_front_page() || is_paged() ) {
  
@@ -378,17 +378,17 @@ add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 30, 30, true );
 }
 
-//取消加载l10n的js
+//å�–æ¶ˆåŠ è½½l10nçš„js
 wp_deregister_script('l10n');
 
-//添加自定义菜单支持
+//æ·»åŠ è‡ªå®šä¹‰è�œå�•æ”¯æŒ�
 add_theme_support('nav-menus');
 register_nav_menus( array(
-        'main_top' => __( 'Menu chính ở trên'),
+        'main_top' => __( 'Menu chÃ­nh á»Ÿ trÃªn'),
 ) );
 
 
-//禁用无觅相关文章插件的JS
+//ç¦�ç”¨æ— è§…ç›¸å…³æ–‡ç« æ�’ä»¶çš„JS
 if (class_exists('WumiiRelatedPosts')) {
     global $wumii_related_posts;
     if (is_object($wumii_related_posts)) {
@@ -399,12 +399,12 @@ if (class_exists('WumiiRelatedPosts')) {
 }
 
 
-//禁用Some Chinese Please!的js
+//ç¦�ç”¨Some Chinese Please!çš„js
 if(function_exists('scp_front')){
     remove_action('wp', 'scp_front');
 }
 
-//实现彩色标签云
+//å®žçŽ°å½©è‰²æ ‡ç­¾äº‘
 function colorCloud($text) {
     $text = preg_replace_callback('|<a (.+?)>|i', 'colorCloudCallback', $text);
     return $text;
@@ -420,7 +420,7 @@ function colorCloudCallback($matches) {
 
 add_filter('wp_tag_cloud', 'colorCloud', 1);
 
-//判断日志是否为最新日志(1天内)
+//åˆ¤æ–­æ—¥å¿—æ˜¯å�¦ä¸ºæœ€æ–°æ—¥å¿—(1å¤©å†…)
 function is_new_post() {
     global $post;
     $post_time = strtotime($post->post_date);
@@ -433,8 +433,8 @@ function is_new_post() {
     }
 }
 
-//中文截断
-function messense_cut_str($string, $sublen, $start = 0, $code = 'UTF-8') { //中文截断专用函数
+//ä¸­æ–‡æˆªæ–­
+function messense_cut_str($string, $sublen, $start = 0, $code = 'UTF-8') { //ä¸­æ–‡æˆªæ–­ä¸“ç”¨å‡½æ•°
     if ($code == 'UTF-8') {
         $pa = "/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";
         preg_match_all($pa, $string, $t_string);
@@ -460,7 +460,7 @@ function messense_cut_str($string, $sublen, $start = 0, $code = 'UTF-8') { //中
     }
 }
 
-//以下是部分SEO优化,页面描述和关键词
+//ä»¥ä¸‹æ˜¯éƒ¨åˆ†SEOä¼˜åŒ–,é¡µé�¢æ��è¿°å’Œå…³é”®è¯�
 function messense_description($echo = TRUE) {
     $description = get_bloginfo('description');
     if (is_single()) {
@@ -470,7 +470,7 @@ function messense_description($echo = TRUE) {
         } elseif (get_post_meta($post->ID, 'description', true)) {
             $description = get_post_meta($post->ID, 'description', true);
         } else {
-            $description = messense_cut_str(strip_tags($post->post_content), 100); //截取文章内容的前100个字作为页面描述
+            $description = messense_cut_str(strip_tags($post->post_content), 100); //æˆªå�–æ–‡ç« å†…å®¹çš„å‰�100ä¸ªå­—ä½œä¸ºé¡µé�¢æ��è¿°
         }
     }
     if ($echo) {
@@ -481,7 +481,7 @@ function messense_description($echo = TRUE) {
 }
 
 function messense_keywords($echo = TRUE) {
-    $keywords = 'messense,乱了感觉,php,java,wap,wap开发,wordpress,音乐,折腾,心情,主题,模板';
+    $keywords = 'messense,ä¹±äº†æ„Ÿè§‰,php,java,wap,wapå¼€å�‘,wordpress,éŸ³ä¹�,æŠ˜è…¾,å¿ƒæƒ…,ä¸»é¢˜,æ¨¡æ�¿';
     if (is_single()) {
         global $post;
         if (get_post_meta($post->ID, 'keywords', true)) {
@@ -493,7 +493,7 @@ function messense_keywords($echo = TRUE) {
                 foreach ($tags as $tag) {
                     $keywords = $keywords . $tag->name . ',';
                 }
-                $keywords = substr($keywords, 0, - 1); //去除最后一个关键字后的半角逗号
+                $keywords = substr($keywords, 0, - 1); //åŽ»é™¤æœ€å�Žä¸€ä¸ªå…³é”®å­—å�Žçš„å�Šè§’é€—å�·
             }
         }
     }
@@ -512,7 +512,7 @@ function pageCount() {
     return ceil($total / $posts_per_page);
 }
 
-//数字分页导航
+//æ•°å­—åˆ†é¡µå¯¼èˆª
 function messense_pagination() {
     global $posts_per_page, $paged, $query_string;
     $my_query = new WP_Query($query_string . '&posts_per_page=-1');
@@ -529,7 +529,7 @@ function messense_pagination() {
         echo ($paged > 1 && $showitems < $pages) ? "<a href=\"" . get_pagenum_link($prev) . "\" title=\"<\"><</a>" : "";
         for ($i = 1; $i <= $pages; $i++) {
             if (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems) {
-                echo ($paged == $i) ? "<span class=\"current\">{$i}</span>" : "<a href=\"" . get_pagenum_link($i) . "\" title=\"第{$i}页\" class=\"inactive\">{$i}</a>";
+                echo ($paged == $i) ? "<span class=\"current\">{$i}</span>" : "<a href=\"" . get_pagenum_link($i) . "\" title=\"ç¬¬{$i}é¡µ\" class=\"inactive\">{$i}</a>";
             }
         }
         echo ($paged < $pages - 1 && $showitems < $pages) ? "<a href=\"" . get_pagenum_link($next) . "\" title=\">\">></a>" : "";
@@ -568,16 +568,16 @@ function comment_mail_notify($comment_id) {
     if ($parent_id != '' && $spam_confirmed != 'spam' && $notify == '1') {
         $wp_email = 'wapdevelop@gmail.com';
         $to = trim(get_comment($parent_id)->comment_author_email);
-        $subject = 'Messense.Me 向您发来被围观通知！';
+        $subject = 'Messense.Me å�‘æ‚¨å�‘æ�¥è¢«å›´è§‚é€šçŸ¥ï¼�';
         $message = '
 <div style="margin:1em 40px 1em 40px;background-color:#eef2fa;border:1px solid #d8e3e8;color:#111;padding:0 15px;font-family:Microsoft YaHei,Verdana;font-size:12.5px;">
-<p><strong>@' . trim(get_comment($parent_id)->comment_author) . '</strong> 童鞋，您在 <strong>《' . get_the_title($comment->comment_post_ID) . '》</strong> 上的评论被围观了！</p>
+<p><strong>@' . trim(get_comment($parent_id)->comment_author) . '</strong> ç«¥éž‹ï¼Œæ‚¨åœ¨ <strong>ã€Š' . get_the_title($comment->comment_post_ID) . 'ã€‹</strong> ä¸Šçš„è¯„è®ºè¢«å›´è§‚äº†ï¼�</p>
 </div>
 <div style="margin:1em 40px 1em 40px;background-color:#eef2fa;border:1px solid #d8e3e8;color:#111;padding:0 15px;font-family:Microsoft YaHei,Verdana;font-size:12.5px;">
-<p><strong>您</strong> 说: ' . trim(get_comment($parent_id)->comment_content) . '</p>
-<p><strong>' . trim($comment->comment_author) . '</strong> 回: ' . trim($comment->comment_content) . '</p>
-<p><small><em>反围观，请猛击： <a href="' . htmlspecialchars(get_permalink($comment->comment_post_ID) . "#comment-" . $comment->comment_ID) . '">' . htmlspecialchars(get_permalink($comment->comment_post_ID) . "#comment-" . $comment->comment_ID) . '</a></em></small></p>
-<p style="float:right"><strong> —— By <a href="http://messense.me">Messense.Me</a></strong></p>
+<p><strong>æ‚¨</strong> è¯´: ' . trim(get_comment($parent_id)->comment_content) . '</p>
+<p><strong>' . trim($comment->comment_author) . '</strong> å›ž: ' . trim($comment->comment_content) . '</p>
+<p><small><em>å��å›´è§‚ï¼Œè¯·çŒ›å‡»ï¼š <a href="' . htmlspecialchars(get_permalink($comment->comment_post_ID) . "#comment-" . $comment->comment_ID) . '">' . htmlspecialchars(get_permalink($comment->comment_post_ID) . "#comment-" . $comment->comment_ID) . '</a></em></small></p>
+<p style="float:right"><strong> â€”â€” By <a href="http://messense.me">Messense.Me</a></strong></p>
 </div>
 ';
         $message = convert_smilies($message);
@@ -595,9 +595,9 @@ function getPostViews($postID){
     if($count==''){
         delete_post_meta($postID, $count_key);
         add_post_meta($postID, $count_key, '0');
-        return "0 View";
+        return "0";
     }
-    return $count.' views';
+    return $count.' ';
 }
 function setPostViews($postID) {
     $count_key = 'post_views_count';
@@ -628,9 +628,9 @@ function setPostViews($postID) {
 
 
 
-//短代码[login]，登录可见内容
+//çŸ­ä»£ç �[login]ï¼Œç™»å½•å�¯è§�å†…å®¹
 function login_to_read($atts, $content=null) {
-    extract(shortcode_atts(array("notice" => '<p class="login-to-read">温馨提示: 此处内容需要<a href="' . wp_login_url(get_permalink()) . '" title="登录">登录</a>后才能查看.</p>'), $atts));
+    extract(shortcode_atts(array("notice" => '<p class="login-to-read">æ¸©é¦¨æ��ç¤º: æ­¤å¤„å†…å®¹éœ€è¦�<a href="' . wp_login_url(get_permalink()) . '" title="ç™»å½•">ç™»å½•</a>å�Žæ‰�èƒ½æŸ¥çœ‹.</p>'), $atts));
     if (is_user_logged_in()) {
         return $content;
     } else {
@@ -640,9 +640,9 @@ function login_to_read($atts, $content=null) {
 
 add_shortcode('login', 'login_to_read');
 
-//短代码[reply]，评论可见内容
+//çŸ­ä»£ç �[reply]ï¼Œè¯„è®ºå�¯è§�å†…å®¹
 function reply_to_read($atts, $content=null) {
-    extract(shortcode_atts(array("notice" => '<p class="reply-to-read">温馨提示: 此处内容需要<a href="' . get_permalink() . '#respond" title="评论本文">评论本文</a>后才能查看.</p>'), $atts));
+    extract(shortcode_atts(array("notice" => '<p class="reply-to-read">æ¸©é¦¨æ��ç¤º: æ­¤å¤„å†…å®¹éœ€è¦�<a href="' . get_permalink() . '#respond" title="è¯„è®ºæœ¬æ–‡">è¯„è®ºæœ¬æ–‡</a>å�Žæ‰�èƒ½æŸ¥çœ‹.</p>'), $atts));
     $email = null;
     $user_ID = (int) wp_get_current_user()->ID;
     if ($user_ID > 0) {
@@ -670,27 +670,27 @@ add_shortcode('reply', 'reply_to_read');
 // Custom Comments List.
 function mytheme_comment($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
-    //主评论计数器初始化 begin - by zwwooooo
+    //ä¸»è¯„è®ºè®¡æ•°å™¨åˆ�å§‹åŒ– begin - by zwwooooo
     global $commentcount;
-    if (!$commentcount) { //初始化楼层计数器
+    if (!$commentcount) { //åˆ�å§‹åŒ–æ¥¼å±‚è®¡æ•°å™¨
         $page = (!empty($in_comment_loop) ) ? get_query_var('cpage') : get_page_of_comment($comment->comment_ID, $args); //zww
         if(isset($args['per_page']) && $args['per_page']>0){
             $cpp=$args['per_page'];
         }else{
-            $cpp = get_option('comments_per_page'); //获取每页评论显示数量
+            $cpp = get_option('comments_per_page'); //èŽ·å�–æ¯�é¡µè¯„è®ºæ˜¾ç¤ºæ•°é‡�
         }
         if ($page > 1) {
             $commentcount = $cpp * ($page - 1);
         } else {
-            $commentcount = 0; //如果评论还没有分页，初始值为0
+            $commentcount = 0; //å¦‚æžœè¯„è®ºè¿˜æ²¡æœ‰åˆ†é¡µï¼Œåˆ�å§‹å€¼ä¸º0
         }
     }
-    //主评论计数器初始化 end - by zwwooooo
+    //ä¸»è¯„è®ºè®¡æ•°å™¨åˆ�å§‹åŒ– end - by zwwooooo
     ?>
     <div class="cmm" <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>" <?php if ($depth < 5 && $depth > 1)
         echo ' style="margin-left: ' . ceil(10 / sqrt($depth)) . 'px; "'; ?>>
                                       <?php
-                                      //用于判断该留言的ID是否为管理员的留言
+                                      //ç”¨äºŽåˆ¤æ–­è¯¥ç•™è¨€çš„IDæ˜¯å�¦ä¸ºç®¡ç�†å‘˜çš„ç•™è¨€
                                       if ($comment->user_id > 0) {
                                           $admin_comment = '<span style="color:#ED539F">' . _e('  ') . '</span>';
                                       } else {
@@ -705,7 +705,7 @@ function mytheme_comment($comment, $args, $depth) {
                 if (!$parent_id = $comment->comment_parent) {
                     printf('%s.', ++$commentcount);
                 } elseif ($depth > 1 && $depth < 8) {
-                    printf('Phản hồi', $depth - 1);
+                    printf('Pháº£n há»“i', $depth - 1);
                 } else {
                     printf('^Heal^');
                 }
@@ -713,7 +713,7 @@ function mytheme_comment($comment, $args, $depth) {
                 <?php printf(__('<cite class="fn"><b><font color="red">%s</b></font></cite><span class="says">%s</span>'), get_comment_author_link(), $admin_comment) ?>
                 <span class="comment-time">(<?php echo get_comment_date('m-d-y'), ' ', get_comment_time('H:i'); ?>)</span>
                 <span class="reply">
-                    <a href="?replytocom=<?php comment_ID() ?>#respond" class="comment-reply-link" rel="nofollow">Trả lời</a>
+                    <a href="?replytocom=<?php comment_ID() ?>#respond" class="comment-reply-link" rel="nofollow">Tráº£ lá»�i</a>
                 </span>
             </div>	
             <div class="comment-text"><?php comment_text(); ?></div>
@@ -940,4 +940,4 @@ function _popular_posts($no_posts=6, $before="<li>", $after="</li>", $show_pass_
 	}
 	return  $output;
 }
-function afublog_getPostViews($postID){ $count_key = 'post_views_count'; $count = get_post_meta($postID, $count_key, true); if($count==''){ delete_post_meta($postID, $count_key); add_post_meta($postID, $count_key, '0'); return "0 Lượt xem"; } return $count.' Lượt xem'; } function afublog_setPostViews($postID) { $count_key = 'post_views_count'; $count = get_post_meta($postID, $count_key, true); if($count==''){ $count = 0; delete_post_meta($postID, $count_key); add_post_meta($postID, $count_key, '0'); }else{ $count++; update_post_meta($postID, $count_key, $count); } }
+function afublog_getPostViews($postID){ $count_key = 'post_views_count'; $count = get_post_meta($postID, $count_key, true); if($count==''){ delete_post_meta($postID, $count_key); add_post_meta($postID, $count_key, '0'); return "0 lượt xem"; } return $count.' LÆ°á»£t xem'; } function afublog_setPostViews($postID) { $count_key = 'post_views_count'; $count = get_post_meta($postID, $count_key, true); if($count==''){ $count = 0; delete_post_meta($postID, $count_key); add_post_meta($postID, $count_key, '0'); }else{ $count++; update_post_meta($postID, $count_key, $count); } }

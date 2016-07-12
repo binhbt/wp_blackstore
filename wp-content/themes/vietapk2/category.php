@@ -11,7 +11,7 @@
 <img width="70" height="70" src="<?php echo my_image_display(); ?>" class="thumb wp-post-image" alt="<?php the_title();?>" title="<?php the_title();?>" /></a></div>
 <div class="tenbaiviet"><h2><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></h2></div>
 <div class="game-title" style="margin-top: 5px;"><span class="item">
-	Hỗ trợ: <?php if(get_post_meta($post->ID, 'z_hotroandroid', true)): ?>
+	Hỗ trợ<?php if(get_post_meta($post->ID, 'z_hotroandroid', true)): ?>
 <i class="fa fa-android" style="color:#86c620"></i>
 <?php endif; ?>
 <?php if(get_post_meta($post->ID, 'z_hotroios', true)): ?>

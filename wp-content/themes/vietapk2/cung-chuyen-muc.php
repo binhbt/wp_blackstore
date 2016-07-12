@@ -6,7 +6,7 @@
 		<div class="PopularPosts">
 			<div class="widget-content">
 				<ul>
-				 <div class="nav" style="margin-top: 10px;"><i class="fa fa-list-alt"></i> Cùng Chuyên Mục</div>
+				 <div class="nav" style="margin-top: 10px;"><i class="fa fa-list-alt"></i> Cùng chuyên mục</div>
 <?php
     $categories = get_the_category($post->ID);
     if ($categories) 
@@ -17,7 +17,7 @@
         $args=array(
         'category__in' => $category_ids,
         'post__not_in' => array($post->ID),
-        'showposts'=>10, // Số bài viết bạn muốn hiển thị.
+        'showposts'=>10, // Sá»‘ bÃ i viáº¿t báº¡n muá»‘n hiá»ƒn thá»‹.
         'caller_get_posts'=>1
         );
         $my_query = new wp_query($args);
@@ -37,7 +37,7 @@
 					<div class="item-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
 					</div>
 
-<div class="game-title" style="margin-top: 5px;">  Hỗ trợ: 
+<div class="game-title" style="margin-top: 5px;">  Xem thêm
 									<span class="item">
 																		<?php if(get_post_meta($post->ID, 'z_hotroandroid', true)): ?>
 <i class="fa fa-android" style="color:#86c620"></i>

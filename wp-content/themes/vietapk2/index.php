@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="bentrai">
 <div id="Blog1">
-<div class="nav"><i class="fa fa-refresh fa-spin"></i> Bài viết mới</div>
+<div class="nav"><i class="fa fa-refresh fa-spin"></i> Game mới</div>
  <?php $i = 1 ; ?>
  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php if ($i == 1): ?>
